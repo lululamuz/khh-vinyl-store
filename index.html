@@ -17,107 +17,98 @@
   </head>
   <body>
     <main class="storefront">
-      <!-- 主视觉:门的照片,占据网格的大部分中心区域 -->
-      <figure class="door-photo">
-        <img
-          src="images/door-main.jpg"
-          alt="Red-painted vintage Parisian storefront with three frosted glass windows and a stained-glass door in pink and purple tones"
-        />
-      </figure>
+      <!-- ===== HERO: 门的照片,横向满宽,不裁切变形 ===== -->
+      <section class="hero">
+        <figure class="door-photo">
+          <img
+            src="images/door-main.jpg"
+            alt="Red-painted vintage Parisian storefront with three frosted glass windows and a stained-glass door in pink and purple tones"
+          />
+          <!-- 门把手贴纸:小尺寸,叠加在照片里真实的门上 -->
+          <img
+            class="handle-overlay"
+            src="images/sticker-handle.jpg"
+            alt="Close-up of a matte white modern door handle, pasted onto the door in the photo"
+          />
+        </figure>
 
-      <!-- 标题:招牌 "VINYL STORE" — 巨大,亮黄色,占满屏幕,竖向拉伸 -->
-      <h1 class="shop-sign">VINYL<br />STORE</h1>
+        <h1 class="shop-sign">VINYL<br />STORE</h1>
 
-      <!-- 贴纸1:营业时间牌 -->
-      <figure class="sticker sticker-hours">
-        <img
-          src="images/sticker-hours.jpg"
-          alt="Pink sign reading 'Opening at 1PM Today' in bold sans-serif text"
-        />
-        <figcaption>hours</figcaption>
-      </figure>
+        <nav class="enter-nav">
+          <a href="page2.html">Click here to enter</a>
+        </nav>
+      </section>
 
-      <!-- 贴纸2:KHH演出海报 (KOLLECTIVE) -->
-      <figure class="sticker sticker-flyer">
-        <img
-          src="images/sticker-flyer.jpg"
-          alt="Black concert flyer titled 'Kollective, Live Shows by KC' listing rappers SIK-K, HAON, VANGDALE, SMMT, and JMIN with Polaroid-style photos of each, for shows at La Cigale Paris and Electric Ballroom London"
-        />
-        <figcaption>flyer</figcaption>
-      </figure>
+      <!-- ===== 拼贴区:其余8张贴纸,按各自原始比例展示,不强行裁切 ===== -->
+      <section class="collage-grid">
+        <figure class="sticker sticker-hours">
+          <img
+            src="images/sticker-hours.jpg"
+            alt="Pink sign reading 'Opening at 1PM Today' in bold sans-serif text"
+          />
+          <figcaption>hours</figcaption>
+        </figure>
 
-      <!-- 贴纸3:玻璃窗涂鸦 -->
-      <figure class="sticker sticker-graffiti">
-        <img
-          src="images/sticker-graffiti.jpg"
-          alt="Pink spray-paint graffiti tag on a glass storefront window"
-        />
-        <figcaption>graffiti</figcaption>
-      </figure>
+        <figure class="sticker sticker-flyer">
+          <img
+            src="images/sticker-flyer.jpg"
+            alt="Black concert flyer titled 'Kollective, Live Shows by KC' listing rappers SIK-K, HAON, VANGDALE, SMMT, and JMIN with Polaroid-style photos of each, for shows at La Cigale Paris and Electric Ballroom London"
+          />
+          <figcaption>flyer</figcaption>
+        </figure>
 
-      <!-- 贴纸4:门把手特写 -->
-      <figure class="sticker sticker-handle">
-        <img
-          src="images/sticker-handle.jpg"
-          alt="Close-up of a matte white modern door handle"
-        />
-        <figcaption>handle</figcaption>
-      </figure>
+        <figure class="sticker sticker-graffiti">
+          <img
+            src="images/sticker-graffiti.jpg"
+            alt="Pink spray-paint graffiti tag on a glass storefront window"
+          />
+          <figcaption>graffiti</figcaption>
+        </figure>
 
-      <!-- 贴纸5:唱片行霓虹招牌 -->
-      <figure class="sticker sticker-sign">
-        <img
-          src="images/sticker-sign.webp"
-          alt="Illuminated yellow and red neon sign reading 'New & Used, Old Stock, Records, Buy Sell'"
-        />
-        <figcaption>sign</figcaption>
-      </figure>
+        <figure class="sticker sticker-sign">
+          <img
+            src="images/sticker-sign.webp"
+            alt="Illuminated yellow and red neon sign reading 'New &amp; Used, Old Stock, Records, Buy Sell'"
+          />
+          <figcaption>sign</figcaption>
+        </figure>
 
-      <!-- 贴纸6:老电视屏幕上的KHH说唱歌手截图,带文字 "IS YOU SWAGGER?" -->
-      <figure class="sticker sticker-poster">
-        <img
-          src="images/sticker-poster1.jpg"
-          alt="Retro CRT television screen showing a Korean hip hop artist in a hood smoking a cigarette, overlaid with red text reading 'IS YOU SWAGGER?'"
-        />
-        <figcaption>poster</figcaption>
-      </figure>
+        <figure class="sticker sticker-poster">
+          <img
+            src="images/sticker-poster1.jpg"
+            alt="Retro CRT television screen showing a Korean hip hop artist in a hood smoking a cigarette, overlaid with red text reading 'IS YOU SWAGGER?'"
+          />
+          <figcaption>poster</figcaption>
+        </figure>
 
-      <!-- 贴纸7:黑胶唱片贴纸 -->
-      <figure class="sticker sticker-vinyl">
-        <img
-          src="images/sticker-vinyl.jpg"
-          alt="Black vinyl record with an orange label reading 'Analog is more beautiful than digital really, but we go for convenience'"
-        />
-        <figcaption>vinyl</figcaption>
-      </figure>
+        <figure class="sticker sticker-vinyl">
+          <img
+            src="images/sticker-vinyl.jpg"
+            alt="Black vinyl record with an orange label reading 'Analog is more beautiful than digital really, but we go for convenience'"
+          />
+          <figcaption>vinyl</figcaption>
+        </figure>
 
-      <!-- 贴纸8:KHH艺人照片,手臂上有"OF"纹身 -->
-      <figure class="sticker sticker-artist">
-        <img
-          src="images/sticker-artist1.jpg"
-          alt="Korean hip hop artist with bleached buzzcut spitting water into the night air, an 'OF' tattoo visible on his upper arm"
-        />
-        <figcaption>artist</figcaption>
-      </figure>
+        <figure class="sticker sticker-artist">
+          <img
+            src="images/sticker-artist1.jpg"
+            alt="Korean hip hop artist with bleached buzzcut spitting water into the night air, an 'OF' tattoo visible on his upper arm"
+          />
+          <figcaption>artist</figcaption>
+        </figure>
 
-      <!-- 贴纸9:KHH艺人合影,比中指 -->
-      <figure class="sticker sticker-group">
-        <img
-          src="images/sticker-group.jpg"
-          alt="Group photo of Korean hip hop artists making rock-on and middle-finger hand gestures at the camera at night"
-        />
-        <figcaption>crew</figcaption>
-      </figure>
+        <figure class="sticker sticker-group">
+          <img
+            src="images/sticker-group.jpg"
+            alt="Group photo of Korean hip hop artists making rock-on and middle-finger hand gestures at the camera at night"
+          />
+          <figcaption>crew</figcaption>
+        </figure>
 
-      <!-- 文字块2:氛围文案 / 涂鸦风格标语 -->
-      <p class="tagline">
-        est. underground — spinning KOREAN HIP HOP, one record at a time.
-      </p>
-
-      <!-- 导航:进入店内 -->
-      <nav class="enter-nav">
-        <a href="page2.html">Click here to enter</a>
-      </nav>
+        <p class="tagline">
+          est. underground — spinning KOREAN HIP HOP, one record at a time.
+        </p>
+      </section>
     </main>
 
     <!-- 素材来源标注:所有从网上找到的图片均需注明出处 -->
