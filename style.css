@@ -28,22 +28,24 @@ body {
   position: relative;
 }
 
-.door-photo img {
+.door-photo .main-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
+/* 门把手贴纸:很小尺寸,精确叠放在照片里真实的门(画面最右侧)上 */
 .handle-overlay {
   position: absolute;
-  top: 46%;
-  right: 6.5%;
-  width: 6%;
+  top: 50%;
+  right: 4%;
+  width: 3.2%;
+  height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border: 3px solid #f4f1ea;
-  box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.55);
+  border: 2px solid #f4f1ea;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.5);
   transform: rotate(-6deg);
   z-index: 2;
 }
