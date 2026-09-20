@@ -17,8 +17,6 @@ body {
 .hero {
   position: relative;
   width: 100%;
-  /* door-main.jpg 原始比例是 735 x 490 = 3 / 2,
-     用 aspect-ratio 锁定容器比例,让照片完整显示、不被压扁或截断 */
   aspect-ratio: 3 / 2;
   max-height: 92vh;
   overflow: hidden;
@@ -37,7 +35,6 @@ body {
   display: block;
 }
 
-/* 门把手贴纸:缩小尺寸,精确叠放在照片里真实的门(画面右侧)上 */
 .handle-overlay {
   position: absolute;
   top: 46%;
@@ -51,7 +48,6 @@ body {
   z-index: 2;
 }
 
-/* 标题招牌:亮黄色,叠加在门的照片上方,横向占满 */
 .shop-sign {
   position: absolute;
   inset: 0;
@@ -61,13 +57,12 @@ body {
   justify-content: center;
   text-align: center;
   font-family: "Abril Fatface", serif;
-  font-size: clamp(3rem, 12vw, 9rem);
-  line-height: 0.85;
-  letter-spacing: -0.02em;
+  font-size: clamp(3rem, 11vw, 8rem);
+  line-height: 0.8;
+  letter-spacing: -0.01em;
   color: #faff00;
-  transform: scaleY(1.25);
-  text-shadow: 3px 3px 0 #000, -3px -3px 0 #000, 3px -3px 0 #000,
-    -3px 3px 0 #000, 0 0 30px rgba(0, 0, 0, 0.6);
+  transform: scaleY(1.75);
+  text-shadow: 0 0 40px rgba(0, 0, 0, 0.55);
   pointer-events: none;
 }
 
@@ -97,9 +92,7 @@ body {
 }
 
 /* ============================================
-   COLLAGE GRID: 其余8张贴纸,按各自原始宽高比展示,
-   用 grid-auto-rows: auto 让每张图保持自己的比例,
-   不会被强行拉伸/裁成一条
+   COLLAGE GRID
    ============================================ */
 .collage-grid {
   display: grid;
@@ -120,7 +113,7 @@ body {
 
 .sticker img {
   width: 100%;
-  height: auto; /* 保持图片原始比例,不强行裁切变形 */
+  height: auto;
   display: block;
 }
 
@@ -134,49 +127,46 @@ body {
   color: #555;
 }
 
-/* 每张贴纸的宽度(列跨度)根据原始比例决定:
-   横向图给更宽的跨度,方形图给中等跨度,竖向图给较窄跨度,
-   这样每张图接近原始比例展示,只用 object-fit 做极轻微的裁切 */
 .sticker-hours {
-  grid-column: span 3; /* 1024x689,接近3:2横图 */
+  grid-column: span 3;
   transform: rotate(-3deg);
   align-self: start;
 }
 
 .sticker-flyer {
-  grid-column: span 2; /* 736x920,竖图海报 */
+  grid-column: span 2;
   transform: rotate(3deg);
 }
 
 .sticker-graffiti {
-  grid-column: span 2; /* 600x600,方形 */
+  grid-column: span 2;
   transform: rotate(-2deg);
 }
 
 .sticker-sign {
-  grid-column: span 2; /* 300x300,方形,原图较小,不放太大 */
+  grid-column: span 2;
   max-width: 240px;
   transform: rotate(4deg);
   justify-self: start;
 }
 
 .sticker-poster {
-  grid-column: span 3; /* 735x741,接近方形,做成较大的焦点图 */
+  grid-column: span 3;
   transform: rotate(-2deg);
 }
 
 .sticker-vinyl {
-  grid-column: span 2; /* 750x1000,竖图 */
+  grid-column: span 2;
   transform: rotate(6deg);
 }
 
 .sticker-artist {
-  grid-column: span 3; /* 736x946,竖图,做成焦点图 */
+  grid-column: span 3;
   transform: rotate(2deg);
 }
 
 .sticker-group {
-  grid-column: span 3; /* 1170x1130,接近方形横图 */
+  grid-column: span 3;
   transform: rotate(-3deg);
 }
 
@@ -190,14 +180,12 @@ body {
   padding-top: 20px;
 }
 
-/* ===== 悬停微交互:贴纸轻微放大摆正 ===== */
 .sticker:hover,
 .sticker:focus-within {
   transform: scale(1.05) rotate(0deg);
   z-index: 5;
 }
 
-/* ===== 素材来源 Credits ===== */
 .credits {
   background: #111;
   color: #999;
@@ -225,7 +213,6 @@ body {
   color: #ffde59;
 }
 
-/* ===== 响应式:小屏幕上简化列数 ===== */
 @media (max-width: 700px) {
   .hero {
     aspect-ratio: 4 / 3;
