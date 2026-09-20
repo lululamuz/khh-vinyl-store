@@ -11,6 +11,12 @@ body {
   color: #222;
 }
 
+.storefront {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr;
+}
+
 /* ============================================
    HERO: 门的照片,横向满宽,所有贴纸都叠加在这张照片上
    ============================================ */
