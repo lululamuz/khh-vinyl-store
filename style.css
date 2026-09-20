@@ -12,7 +12,7 @@ body {
 }
 
 /* ============================================
-   HERO: 门的照片,横向满宽,保持原始比例不裁切变形
+   HERO: 门的照片,横向满宽,所有贴纸都叠加在这张照片上
    ============================================ */
 .hero {
   position: relative;
@@ -25,7 +25,6 @@ body {
 .door-photo {
   width: 100%;
   height: 100%;
-  position: relative;
 }
 
 .door-photo .main-photo {
@@ -33,21 +32,6 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-/* 门把手贴纸:很小尺寸,精确叠放在照片里真实的门(画面最右侧)上 */
-.handle-overlay {
-  position: absolute;
-  top: 50%;
-  right: 4%;
-  width: 3.2%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border: 2px solid #f4f1ea;
-  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.5);
-  transform: rotate(-6deg);
-  z-index: 2;
 }
 
 .shop-sign {
@@ -66,6 +50,114 @@ body {
   transform: scaleY(1.75);
   text-shadow: 0 0 40px rgba(0, 0, 0, 0.55);
   pointer-events: none;
+}
+
+.handle-overlay {
+  position: absolute;
+  top: 55%;
+  right: 15%;
+  width: 3.6%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 2px solid #f4f1ea;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.5);
+  transform: rotate(-6deg);
+  transition: transform 0.25s ease;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.handle-overlay:hover,
+.handle-overlay:focus {
+  transform: scale(1.4) rotate(0deg);
+  z-index: 6;
+}
+
+.sticker {
+  position: absolute;
+  z-index: 2;
+  border: 5px solid #f4f1ea;
+  background: #f4f1ea;
+  box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.25s ease;
+}
+
+.sticker img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sticker:hover,
+.sticker:focus-within {
+  z-index: 6;
+  transform: scale(1.12) rotate(0deg) !important;
+}
+
+.sticker-hours {
+  top: 4%;
+  left: 2%;
+  width: 15%;
+  aspect-ratio: 1024 / 689;
+  transform: rotate(-4deg);
+}
+
+.sticker-graffiti {
+  top: 40%;
+  left: 3%;
+  width: 10%;
+  aspect-ratio: 1 / 1;
+  transform: rotate(-6deg);
+}
+
+.sticker-sign {
+  bottom: 8%;
+  left: 3%;
+  width: 7%;
+  aspect-ratio: 1 / 1;
+  transform: rotate(5deg);
+}
+
+.sticker-flyer {
+  bottom: 6%;
+  left: 14%;
+  width: 10%;
+  aspect-ratio: 736 / 920;
+  transform: rotate(4deg);
+}
+
+.sticker-poster {
+  top: 6%;
+  right: 24%;
+  width: 12%;
+  aspect-ratio: 735 / 741;
+  transform: rotate(-3deg);
+}
+
+.sticker-group {
+  top: 4%;
+  right: 3%;
+  width: 13%;
+  aspect-ratio: 1170 / 1130;
+  transform: rotate(3deg);
+}
+
+.sticker-vinyl {
+  bottom: 8%;
+  right: 22%;
+  width: 9%;
+  aspect-ratio: 750 / 1000;
+  transform: rotate(6deg);
+}
+
+.sticker-artist {
+  bottom: 6%;
+  right: 4%;
+  width: 10%;
+  aspect-ratio: 736 / 946;
+  transform: rotate(-5deg);
 }
 
 .enter-nav {
@@ -93,99 +185,14 @@ body {
   background: rgba(0, 0, 0, 0.85);
 }
 
-/* ============================================
-   COLLAGE GRID
-   ============================================ */
-.collage-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: auto;
-  grid-auto-flow: dense;
-  gap: 28px;
-  padding: 60px 40px;
-  align-items: start;
-}
-
-.sticker {
-  border: 6px solid #f4f1ea;
-  background: #f4f1ea;
-  box-shadow: 4px 6px 14px rgba(0, 0, 0, 0.5);
-  transition: transform 0.25s ease;
-}
-
-.sticker img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.sticker figcaption {
-  font-family: "Space Mono", monospace;
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  text-align: center;
-  padding: 4px 0;
-  color: #555;
-}
-
-.sticker-hours {
-  grid-column: span 3;
-  transform: rotate(-3deg);
-  align-self: start;
-}
-
-.sticker-flyer {
-  grid-column: span 2;
-  transform: rotate(3deg);
-}
-
-.sticker-graffiti {
-  grid-column: span 2;
-  transform: rotate(-2deg);
-}
-
-.sticker-sign {
-  grid-column: span 2;
-  max-width: 240px;
-  transform: rotate(4deg);
-  justify-self: start;
-}
-
-.sticker-poster {
-  grid-column: span 3;
-  transform: rotate(-2deg);
-}
-
-.sticker-vinyl {
-  grid-column: span 2;
-  transform: rotate(6deg);
-}
-
-.sticker-artist {
-  grid-column: span 3;
-  transform: rotate(2deg);
-}
-
-.sticker-group {
-  grid-column: span 3;
-  transform: rotate(-3deg);
-}
-
 .tagline {
-  grid-column: span 6;
   font-family: "Space Mono", monospace;
   font-weight: 700;
   font-size: 0.95rem;
   color: #f4e9d8;
   text-align: center;
-  padding-top: 20px;
-}
-
-.sticker:hover,
-.sticker:focus-within {
-  transform: scale(1.05) rotate(0deg);
-  z-index: 5;
+  padding: 24px 20px;
+  background: #1a1a1a;
 }
 
 .credits {
@@ -217,28 +224,27 @@ body {
 
 @media (max-width: 700px) {
   .hero {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 5;
     max-height: none;
   }
   .shop-sign {
     font-size: clamp(2.2rem, 16vw, 4rem);
   }
-  .collage-grid {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 30px 20px;
-  }
   .sticker-hours,
-  .sticker-flyer,
-  .sticker-graffiti,
-  .sticker-sign,
   .sticker-poster,
-  .sticker-vinyl,
-  .sticker-artist,
   .sticker-group {
-    grid-column: span 2;
-    transform: none;
+    width: 22%;
   }
-  .tagline {
-    grid-column: span 2;
+  .sticker-graffiti,
+  .sticker-flyer,
+  .sticker-vinyl,
+  .sticker-artist {
+    width: 16%;
+  }
+  .sticker-sign {
+    width: 11%;
+  }
+  .handle-overlay {
+    width: 6%;
   }
 }
