@@ -1,0 +1,244 @@
+/* ===== 全局重置 ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1a1a1a;
+  font-family: "Space Mono", monospace;
+  color: #222;
+}
+
+/* ===== Page 1: Storefront Grid ===== */
+/* 6列 x 5行的网格结构:门占据中心大区域,贴纸元素错落分布在四周,
+   营造"贴纸贴在照片上"的拼贴效果 */
+.storefront {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, minmax(90px, 1fr));
+  gap: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px;
+  position: relative;
+}
+
+/* 门的主图:占据中间偏大区域 */
+.door-photo {
+  grid-column: 2 / 6;
+  grid-row: 1 / 6;
+  z-index: 1;
+}
+
+.door-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== 标题招牌 ===== */
+/* 覆盖整个屏幕的巨大标题:亮黄色 + 竖向拉伸,像贴在店面上的巨型海报字 */
+.shop-sign {
+  grid-column: 1 / 7;
+  grid-row: 1 / 6;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Abril Fatface", serif;
+  font-size: clamp(4rem, 16vw, 13rem);
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  color: #faff00;
+  transform: scaleY(1.35);
+  text-shadow: 4px 4px 0 #000, -4px -4px 0 #000, 4px -4px 0 #000,
+    -4px 4px 0 #000, 0 0 40px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  mix-blend-mode: normal;
+}
+
+/* ===== 贴纸通用样式 ===== */
+/* 模拟"打印出来贴上去"的效果:白边、轻微旋转、阴影 */
+.sticker {
+  z-index: 2;
+  border: 6px solid #f4f1ea;
+  box-shadow: 4px 6px 14px rgba(0, 0, 0, 0.5);
+  background: #f4f1ea;
+}
+
+.sticker img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sticker figcaption {
+  font-family: "Space Mono", monospace;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  padding: 2px 0;
+  color: #555;
+}
+
+/* 每个贴纸的位置 + 独立的旋转角度,制造随手贴上去的散乱感 */
+.sticker-hours {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  transform: rotate(-6deg);
+  justify-self: start;
+  align-self: start;
+}
+
+.sticker-flyer {
+  grid-column: 5 / 7;
+  grid-row: 1 / 3;
+  transform: rotate(4deg);
+  justify-self: end;
+}
+
+.sticker-graffiti {
+  grid-column: 3 / 5;
+  grid-row: 2 / 3;
+  transform: rotate(-2deg);
+  align-self: center;
+}
+
+.sticker-handle {
+  grid-column: 5 / 6;
+  grid-row: 3 / 4;
+  transform: rotate(5deg);
+}
+
+.sticker-sign {
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+  transform: rotate(3deg);
+}
+
+.sticker-poster {
+  grid-column: 2 / 4;
+  grid-row: 5 / 6;
+  transform: rotate(-3deg);
+  align-self: end;
+}
+
+.sticker-vinyl {
+  grid-column: 5 / 6;
+  grid-row: 4 / 5;
+  transform: rotate(-7deg);
+}
+
+.sticker-artist {
+  grid-column: 4 / 6;
+  grid-row: 5 / 6;
+  transform: rotate(2deg);
+  align-self: end;
+}
+
+.sticker-group {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+  transform: rotate(6deg);
+}
+
+/* ===== 氛围文案 ===== */
+.tagline {
+  grid-column: 1 / 3;
+  grid-row: 5 / 6;
+  align-self: end;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #f4e9d8;
+  line-height: 1.4;
+}
+
+/* ===== 进入导航 ===== */
+.enter-nav {
+  grid-column: 1 / 7;
+  grid-row: 1 / 6;
+  z-index: 4;
+  align-self: end;
+  justify-self: center;
+  margin-bottom: -10px;
+  pointer-events: none; /* 只让链接本身可点击,不挡住其他区域 */
+}
+
+.enter-nav a {
+  pointer-events: auto;
+  font-family: "Space Mono", monospace;
+  font-size: 1.1rem;
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 24px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.enter-nav a:hover,
+.enter-nav a:focus {
+  color: #ffde59;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+/* ===== 悬停微交互:贴纸轻微放大 ===== */
+.sticker:hover,
+.sticker:focus-within {
+  transform: scale(1.06) rotate(0deg);
+  transition: transform 0.25s ease;
+  z-index: 5;
+}
+
+/* ===== 素材来源 Credits ===== */
+.credits {
+  background: #111;
+  color: #999;
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  padding: 24px 40px 40px;
+  line-height: 1.8;
+}
+
+.credits h2 {
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.credits a {
+  color: #f4e9d8;
+}
+
+.credits a:hover,
+.credits a:focus {
+  color: #ffde59;
+}
+
+/* ===== 响应式:小屏幕上简化为单列堆叠 ===== */
+@media (max-width: 700px) {
+  .storefront {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    padding: 20px;
+  }
+  .door-photo,
+  .shop-sign,
+  .sticker,
+  .tagline,
+  .enter-nav {
+    grid-column: 1 / 3;
+    transform: none !important;
+  }
+}
