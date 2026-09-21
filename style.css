@@ -617,7 +617,8 @@ body {
   outline-offset: 2px;
 }
 
-/* 贴纸:放大尺寸,直接压在MP3机身和滚轮上,营造贴满机身的拼贴感 */
+/* 贴纸:放大尺寸,直接压在MP3机身和滚轮上,营造贴满机身的拼贴感,
+   并加上左右轻轻摆动的动画,让静态贴纸有种"风吹动"的生气 */
 .deco-sticker {
   position: absolute;
   z-index: 4;
@@ -625,41 +626,42 @@ body {
   aspect-ratio: 0.8;
   object-fit: contain;
   filter: drop-shadow(3px 6px 12px rgba(0, 0, 0, 0.65));
+  transform-origin: 50% 15%;
 }
 
 .deco-two-rappers {
   top: 33%;
   left: 5%;
-  width: 18%;
-  transform: rotate(-8deg);
+  width: 24%;
+  animation: sway-a 4.2s ease-in-out infinite;
 }
 
 .deco-mirror-selfie {
   top: 30%;
   right: 4%;
   width: 16%;
-  transform: rotate(7deg);
+  animation: sway-b 3.8s ease-in-out infinite;
 }
 
 .deco-money-face {
   top: 52%;
   left: 1%;
-  width: 15%;
-  transform: rotate(-6deg);
+  width: 22%;
+  animation: sway-c 4.6s ease-in-out infinite;
 }
 
 .deco-five-black {
   top: 50%;
   right: 1%;
   width: 16%;
-  transform: rotate(6deg);
+  animation: sway-d 4s ease-in-out infinite;
 }
 
 .deco-four-peace {
   top: 70%;
   left: 3%;
-  width: 14%;
-  transform: rotate(-5deg);
+  width: 26%;
+  animation: sway-e 4.4s ease-in-out infinite;
 }
 
 .deco-fivelines-circle {
@@ -667,22 +669,22 @@ body {
   right: 30%;
   width: 11%;
   aspect-ratio: 1;
-  transform: rotate(5deg);
+  animation: sway-f 3.6s ease-in-out infinite;
 }
 
 .deco-heart {
   bottom: 1%;
   left: 22%;
-  width: 13%;
+  width: 18%;
   aspect-ratio: 1;
-  transform: rotate(4deg);
+  animation: sway-g 4.8s ease-in-out infinite;
 }
 
 .deco-five-bw-group {
   bottom: 1%;
   right: 20%;
-  width: 16%;
-  transform: rotate(-4deg);
+  width: 20%;
+  animation: sway-h 4.1s ease-in-out infinite;
 }
 
 /* 五角星形状的两张贴纸 */
@@ -692,6 +694,7 @@ body {
   width: 12%;
   aspect-ratio: 1;
   display: block;
+  transform-origin: 50% 15%;
 }
 
 .deco-star img {
@@ -716,14 +719,56 @@ body {
 .deco-star-wall {
   top: 37%;
   left: 34%;
-  transform: rotate(-9deg);
+  animation: sway-i 4.3s ease-in-out infinite;
 }
 
 .deco-star-scarred {
   top: 83%;
   left: 50%;
   width: 11%;
-  transform: translateX(-50%) rotate(6deg);
+  animation: sway-j 3.9s ease-in-out infinite;
+}
+
+/* 每个贴纸各自的摆动区间,围绕它原本的倾斜角度小幅度左右晃动 */
+@keyframes sway-a {
+  0%, 100% { transform: rotate(-11deg); }
+  50% { transform: rotate(-5deg); }
+}
+@keyframes sway-b {
+  0%, 100% { transform: rotate(4deg); }
+  50% { transform: rotate(10deg); }
+}
+@keyframes sway-c {
+  0%, 100% { transform: rotate(-9deg); }
+  50% { transform: rotate(-3deg); }
+}
+@keyframes sway-d {
+  0%, 100% { transform: rotate(3deg); }
+  50% { transform: rotate(9deg); }
+}
+@keyframes sway-e {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(-2deg); }
+}
+@keyframes sway-f {
+  0%, 100% { transform: rotate(2deg); }
+  50% { transform: rotate(8deg); }
+}
+@keyframes sway-g {
+  0%, 100% { transform: rotate(1deg); }
+  50% { transform: rotate(7deg); }
+}
+@keyframes sway-h {
+  0%, 100% { transform: rotate(-7deg); }
+  50% { transform: rotate(-1deg); }
+}
+@keyframes sway-i {
+  0%, 100% { transform: rotate(-12deg); }
+  50% { transform: rotate(-6deg); }
+}
+@keyframes sway-j {
+  0%, 100% { transform: translateX(-50%) rotate(3deg); }
+  50% { transform: translateX(-50%) rotate(9deg); }
 }
 
 /* ===== 响应式:小屏幕上贴纸稍微缩小并收进边缘,避免溢出太多 ===== */
