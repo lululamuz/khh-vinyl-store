@@ -11,6 +11,9 @@ body {
   color: #222;
 }
 
+/* Page 1 整体用 CSS Grid 分成两行:hero大图区 + tagline文字区。
+   hero内部的贴纸依然用 position:absolute 做自由拼贴,两者不冲突:
+   Grid 负责整页的宏观结构,absolute 负责 hero 内部的贴纸细节摆放。 */
 .storefront {
   display: grid;
   grid-template-rows: auto auto;
@@ -23,7 +26,7 @@ body {
 .hero {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 3 / 2; /* 门店照片原始比例 735x490,完整显示不裁切变形 */
   max-height: 92vh;
   overflow: hidden;
 }
@@ -40,6 +43,7 @@ body {
   display: block;
 }
 
+/* ===== 标题招牌 ===== */
 .shop-sign {
   position: absolute;
   inset: 0;
@@ -58,6 +62,7 @@ body {
   pointer-events: none;
 }
 
+/* ===== 门把手贴纸:很小尺寸,贴在照片里真实门的位置上,可交互 ===== */
 .handle-overlay {
   position: absolute;
   top: 55%;
@@ -80,6 +85,7 @@ body {
   z-index: 6;
 }
 
+/* ===== 贴纸通用样式:白边+投影,模拟"贴上去"的质感 ===== */
 .sticker {
   position: absolute;
   z-index: 2;
@@ -102,6 +108,7 @@ body {
   transform: scale(1.12) rotate(0deg) !important;
 }
 
+/* 每张贴纸的位置、大小、比例,均对应各自原图的真实宽高比,避免裁切变形 */
 .sticker-hours {
   top: 4%;
   left: 2%;
@@ -166,6 +173,7 @@ body {
   transform: rotate(-5deg);
 }
 
+/* ===== 导航:进入店内 ===== */
 .enter-nav {
   position: absolute;
   bottom: 5%;
@@ -191,6 +199,7 @@ body {
   background: rgba(0, 0, 0, 0.85);
 }
 
+/* ===== 氛围文案 ===== */
 .tagline {
   font-family: "Space Mono", monospace;
   font-weight: 700;
@@ -201,6 +210,7 @@ body {
   background: #1a1a1a;
 }
 
+/* ===== 素材来源 Credits ===== */
 .credits {
   background: #111;
   color: #999;
@@ -228,6 +238,7 @@ body {
   color: #ffde59;
 }
 
+/* ===== 响应式:小屏幕上让贴纸稍微缩小,避免过度重叠 ===== */
 @media (max-width: 700px) {
   .hero {
     aspect-ratio: 4 / 5;
@@ -252,5 +263,215 @@ body {
   }
   .handle-overlay {
     width: 6%;
+  }
+}
+
+/* ============================================
+   PAGE 2: THE DISPLAY WALL
+   3行 x 4列 的 CSS Grid 展示墙,和page1的absolute拼贴、
+   page3(之后)的布局都不一样,体现"每页不同网格结构"
+   ============================================ */
+.page2-body {
+  background: #0d0d0d;
+}
+
+/* 天窗:纯装饰,模拟店内抬头看到的天花板光线 */
+.skylight {
+  position: relative;
+  height: 140px;
+  background: repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.06) 0px,
+      rgba(255, 255, 255, 0.06) 2px,
+      transparent 2px,
+      transparent 90px
+    ),
+    linear-gradient(180deg, #2a2a2a 0%, #0d0d0d 100%);
+  overflow: hidden;
+}
+
+.skylight-glow {
+  position: absolute;
+  top: -60%;
+  left: 50%;
+  width: 60%;
+  height: 200%;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 224, 0.35) 0%,
+    rgba(255, 255, 224, 0) 70%
+  );
+}
+
+.display-room {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 80px 100px;
+}
+
+.room-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.room-header h1 {
+  font-family: "Abril Fatface", serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: #faff00;
+  letter-spacing: 0.02em;
+}
+
+.room-intro {
+  font-family: "Space Mono", monospace;
+  color: #ccc;
+  max-width: 560px;
+  margin: 14px auto 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* 展示墙:3行4列 CSS Grid */
+.wall-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.flip-card {
+  perspective: 1200px;
+  aspect-ratio: 1.34;
+  cursor: pointer;
+  outline: none;
+}
+
+.flip-card:focus-visible .flip-card-inner {
+  outline: 3px solid #faff00;
+  outline-offset: 4px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.6);
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.flip-card-back {
+  background: #111;
+  border: 2px solid #faff00;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+}
+
+.track-title {
+  font-family: "Abril Fatface", serif;
+  color: #faff00;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.track-feat {
+  font-family: "Space Mono", monospace;
+  color: #ccc;
+  font-size: 0.7rem;
+  margin-bottom: 8px;
+}
+
+.track-artists {
+  font-family: "Space Mono", monospace;
+  color: #999;
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+/* 左右箭头导航 */
+.wall-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #faff00;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 50%;
+  z-index: 10;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.wall-arrow-left {
+  left: 20px;
+}
+
+.wall-arrow-right {
+  right: 20px;
+}
+
+.wall-arrow:hover,
+.wall-arrow:focus {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-50%) scale(1.12);
+}
+
+.credits-note {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== 响应式:小屏幕上减少列数 ===== */
+@media (max-width: 900px) {
+  .display-room {
+    padding: 30px 30px 80px;
+  }
+  .wall-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+  .wall-arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wall-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(12, 1fr);
   }
 }
