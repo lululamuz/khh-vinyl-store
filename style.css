@@ -507,12 +507,12 @@ body {
 
 .ipod-stage {
   width: 100%;
-  padding: 0 60px 140px;
+  padding: 0 0 140px;
 }
 
 .ipod-header {
   text-align: center;
-  padding: 50px 20px 40px;
+  padding: 50px 40px 30px;
 }
 
 .ipod-title {
@@ -528,14 +528,11 @@ body {
   font-size: 0.9rem;
 }
 
-/* MP3播放器特写:横向满宽,和照片原始比例完全一致,不裁切变形 */
+/* MP3播放器特写:横向满宽,贴边撑满,不留黑边 */
 .ipod-hero {
   position: relative;
   width: 100%;
   aspect-ratio: 1102 / 955;
-  max-height: 78vh;
-  margin: 0 auto;
-  max-width: 1100px;
 }
 
 .ipod-hero .main-photo {
@@ -543,26 +540,26 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 8px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
 }
 
-/* 屏幕区域:2x2 CSS Grid,四张可点击播放的专辑封面 */
+/* 屏幕区域:2x2 CSS Grid,四个正方形小方块,缩小尺寸精确卡在屏幕这条窄带里,
+   不再拉伸变形 */
 .screen-grid {
   position: absolute;
   top: 3%;
-  left: 7%;
-  width: 86%;
-  height: 33%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 3%;
+  gap: 6%;
   z-index: 3;
 }
 
 .screen-cell {
   position: relative;
+  width: 100%;
+  aspect-ratio: 1;
   padding: 0;
   border: none;
   cursor: pointer;
