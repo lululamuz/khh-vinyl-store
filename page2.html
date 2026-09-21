@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Display Wall — Korean Hip Hop Collage</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page2-body">
+    <!-- 天窗:纯装饰性的CSS天窗效果,暗示"店内向上看到的天花板光线" -->
+    <div class="skylight" aria-hidden="true">
+      <div class="skylight-glow"></div>
+    </div>
+
+    <main class="display-room">
+      <header class="room-header">
+        <h1>THE DISPLAY WALL</h1>
+        <p class="room-intro">
+          Twelve sleeves pulled from the crate — hover or tap a record to flip
+          it and see who's behind the sound.
+        </p>
+      </header>
+
+      <!-- 展示墙:3行4列的CSS Grid,每个格子是一张可翻转的专辑卡片 -->
+      <section class="wall-grid">
+        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="anyhow featuring ZENE THE ZILLA">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                src="images/page2/album-01-anyhow.png"
+                alt="Dark album cover with ornate bone-like calligraphy and small red Japanese text at the bottom, styled as a vinyl sleeve with a black record peeking out"
+              />
+            </div>
+            <div class="flip-card-back">
+              <p class="track-title">anyhow</p>
+              <p class="track-feat">feat. ZENE THE ZILLA</p>
+              <p class="track-artists">TOIL, Gist, ZENE THE ZILLA</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="Skrr featuring GISELLE">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                src="images/page2/album-02-skrr.png"
+                alt="White paper heart with handwritten artist names HAON and GISELLE on a black background, styled as a vinyl sleeve"
+              />
+            </div>
+            <div class="flip-card-back">
+              <p class="track-title">Skrr</p>
+              <p class="track-feat">feat. GISELLE</p>
+              <p class="track-artists">HAON, GISELLE</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="Checkmate by Royal 44">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                src="images/page2/album-03-checkmate.png"
+                alt="White marble bust of a face with a dripping blood tear and diamond earrings, engraved with the word Checkmate, styled as a vinyl sleeve"
+              />
+            </div>
+            <div class="flip-card-back">
+              <p class="track-title">Checkmate</p>
+              <p class="track-artists">Royal 44</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="OFOSUN by OSUN">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                src="images/page2/album-04-ofosun.png"
+                alt="Photo of a man with a bleached buzzcut spitting water into the night air, an OF tattoo on his upper arm, styled as a vinyl sleeve"
+              />
+            </div>
+            <div class="flip-card-back">
+              <p class="track-title">OFOSUN</p>
+              <p class="track-artists">OSUN</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="Luxury Tape by NOWIMYOUNG">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                src="images/page2/album-05-luxurytape.png"
+                alt="Sparkling rabbit-shaped bust covered in rhinestones baring its teeth on a white background, styled as a vinyl sleeve"
+              />
+            </div>
+            <div class="flip-card-back">
+              <p class="track-title">LUXURY TAPE</p>
+              <p class="track-artists">NOWIMYOUNG</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="LOV3 featuring Bryan Chase and Okasian">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                src="images/page2/album-06-lov3.png"
+                alt="Blurry black and white photo of a person's legs and jacket mid-motion with a Parental Advisory Explicit Content label, styled as a vinyl sleeve"
+              />
+            </div>
+            <div class="flip-card-back">
+              <p class="track-title">LOV3</p>
+              <p class="track-feat">feat. Bryan Chase, Okasian</p>
+              <p class="track-artists">Sik-K, Lil Moshpit, Bryan Chase, Okasian</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="SS-POP1 by SYSTEM SEOUL and ycs">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                src="images/page2/album-07-sspop1.png"
+                alt="Four masked figures in black hoodies printed with a blue System Seoul logo, posing on a tiled staircase at night, styled as a vinyl sleeve"
+              />
+            </div>
+            <div class="flip-card-back">
+              <p class="track-title">SS-POP1</p>
+              <p class="track-artists">SYSTEM SEOUL, ycs</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="KC3 by KC, Sik-K, HAON, NOWIMYOUNG, and JMIN">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                src="images/page2/album-08-kc3.png"
+                alt="Bone and skull motif forming the letters KC in a chrome metallic style on a black background, styled as a vinyl sleeve"
+              />
+            </div>
+            <div class="flip-card-back">
+              <p class="track-title">KC3</p>
+              <p class="track-artists">KC, Sik-K, HAON, NOWIMYOUNG, JMIN</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="Forever Kids by JMIN">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                src="images/page2/album-09-foreverkids.png"
+                alt="Grid of nine colorful cartoon character head icons with punk and street-style hair and accessories, styled as a vinyl sleeve"
+              />
+            </div>
+            <div class="flip-card-back">
+              <p class="track-title">FOREVER KIDS</p>
+              <p class="track-artists">JMIN</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="Yin and Yang by JMIN">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                src="images/page2/album-10-yinyang.png"
+                alt="Black and white stencil illustration of a woman in platform boots beside a speaker, with a pink banner reading yin and yang, styled as a vinyl sleeve"
+              />
+            </div>
+            <div class="flip-card-back">
+              <p class="track-title">YIN &amp; YANG</p>
+              <p class="track-artists">JMIN</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="Burning slow remix featuring Sik-K and GGM LIL DRAGON">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                src="images/page2/album-11-burningslow.png"
+                alt="Grainy black and white photograph with a soft glowing curved shape and a Parental Advisory Explicit Content label, styled as a vinyl sleeve"
+              />
+            </div>
+            <div class="flip-card-back">
+              <p class="track-title">Burning slow (Remix)</p>
+              <p class="track-feat">feat. Sik-K, GGM LIL DRAGON</p>
+              <p class="track-artists">Molly Yam, Sik-K, GGM LIL DRAGON</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="Annyeonghaseyo 4SHO Remix">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                src="images/page2/album-12-annyeonghaseyo.png"
+                alt="White cover with handwritten Korean text reading annyeonghaseyo and the label 4SHO Remix above a list of artist names, styled as a vinyl sleeve"
+              />
+            </div>
+            <div class="flip-card-back">
+              <p class="track-title">アニョハセヨ (4SHO Remix)</p>
+              <p class="track-artists">Yuki Chiba, Lil Moshpit, RYUL of LNGSHOT, Jay Park</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 左右箭头导航:左回主页,右去下一页 -->
+    <nav class="wall-nav" aria-label="Page navigation">
+      <a class="wall-arrow wall-arrow-left" href="index.html" aria-label="Back to the storefront">&#8592;</a>
+      <a class="wall-arrow wall-arrow-right" href="page3.html" aria-label="Continue to the next room">&#8594;</a>
+    </nav>
+
+    <footer class="credits">
+      <h2>Image Credits</h2>
+      <p class="credits-note">
+        Original album artwork by the respective artists, sourced from Spotify;
+        each cover was redesigned by hand into a vinyl-sleeve format for this project.
+      </p>
+    </footer>
+
+    <script>
+      // 让触摸设备(没有鼠标hover)也能点击翻转卡片,同时保留键盘可访问性
+      document.querySelectorAll(".flip-card").forEach(function (card) {
+        function toggleFlip() {
+          var flipped = card.classList.toggle("flipped");
+          card.setAttribute("aria-pressed", flipped ? "true" : "false");
+        }
+        card.addEventListener("click", toggleFlip);
+        card.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggleFlip();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
