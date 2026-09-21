@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Player — Korean Hip Hop Collage</title>
+    <title>2000s — Korean Hip Hop Collage</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,12 +16,12 @@
   </head>
   <body class="page3-body">
     <main class="ipod-stage">
-      <h1 class="ipod-title">THE PLAYER</h1>
-      <p class="ipod-instructions">
-        tap a cover on the screen to hear a 20 second clip.
-      </p>
+      <header class="ipod-header">
+        <h1 class="ipod-title">2000s</h1>
+        <p class="ipod-instructions">tap to hear clip</p>
+      </header>
 
-      <!-- MP3特写照片:主视觉,只露出半个屏幕和半个操控轮 -->
+      <!-- MP3特写照片:横向满宽,占满屏幕不留黑边,贴纸和屏幕都叠加在这张照片本身上 -->
       <figure class="ipod-hero">
         <img
           class="main-photo"
@@ -60,7 +60,7 @@
           <button
             class="screen-cell"
             type="button"
-            data-audio="images/page3/audio/track-03-publicenemy.mp3"
+            data-audio="images/page3/audio/track-04-kc3.mp3"
             aria-label="Play a 20 second clip of Public Enemy 4SHOMIX"
           >
             <img
@@ -73,7 +73,7 @@
           <button
             class="screen-cell"
             type="button"
-            data-audio="images/page3/audio/track-04-kc3.mp3"
+            data-audio="images/page3/audio/track-03-publicenemy.mp3"
             aria-label="Play a 20 second clip of KC3"
           >
             <img
@@ -84,25 +84,23 @@
           </button>
         </div>
 
-        <!-- 门把手同款思路:贴纸叠加在机身周围,但这次贴纸在stage层,不在hero内部,方便铺得更开 -->
+        <!-- 贴纸:直接叠加在MP3机身照片上,不再散布在黑色背景上 -->
+        <img class="deco-sticker deco-two-rappers" src="images/page3/sticker-two-rappers.png" alt="Cutout photo of two Korean hip hop artists posing, one in a blue bucket hat throwing a peace sign, the other with red hair wearing sunglasses" />
+        <img class="deco-sticker deco-mirror-selfie" src="images/page3/sticker-mirror-selfie.png" alt="Cutout mirror selfie of a young man in a red pinstriped jersey and scarf holding up a phone to take the photo" />
+        <img class="deco-sticker deco-heart" src="images/page3/sticker-heart.png" alt="Cutout photo of two people close together, framed inside a hand-drawn red heart outline" />
+        <img class="deco-sticker deco-money-face" src="images/page3/sticker-money-face.png" alt="Cutout photo of a person in sunglasses and a black hoodie covering their mouth with a stack of cash" />
+        <img class="deco-sticker deco-four-peace" src="images/page3/sticker-four-peace.png" alt="Cutout group photo of four friends making peace signs and hand gestures at night" />
+        <img class="deco-sticker deco-five-black" src="images/page3/sticker-five-black.png" alt="Cutout photo of five people in all-black streetwear making rock-on and middle finger gestures" />
+        <img class="deco-sticker deco-fivelines-circle" src="images/page3/sticker-fivelines-circle.png" alt="Circular cropped nighttime portrait of a young man with a buzzcut, overlaid with a white star and the watermark FIVELINES" />
+        <img class="deco-sticker deco-five-bw-group" src="images/page3/sticker-five-bw-group.png" alt="Black and white cutout group photo of five people posing together in dark streetwear" />
+
+        <span class="deco-star deco-star-wall">
+          <img src="images/page3/star-wall-selfie.jpg" alt="Photo of a young man pointing at a wall covered in stickers, cropped into a star shape" />
+        </span>
+        <span class="deco-star deco-star-scarred">
+          <img src="images/page3/star-scarred-guy.jpg" alt="Nighttime selfie of a young man with a scratched face, a surgical mask pulled down, and a cigarette in his mouth, cropped into a star shape" />
+        </span>
       </figure>
-
-      <!-- 贴纸:围绕在MP3播放器四周,自由拼贴风格,和page1呼应但独立摆放 -->
-      <img class="deco-sticker deco-two-rappers" src="images/page3/sticker-two-rappers.png" alt="Cutout photo of two Korean hip hop artists posing, one in a blue bucket hat throwing a peace sign, the other with red hair wearing sunglasses" />
-      <img class="deco-sticker deco-mirror-selfie" src="images/page3/sticker-mirror-selfie.png" alt="Cutout mirror selfie of a young man in a red pinstriped jersey and scarf holding up a phone to take the photo" />
-      <img class="deco-sticker deco-heart" src="images/page3/sticker-heart.png" alt="Cutout photo of two people close together, framed inside a hand-drawn red heart outline" />
-      <img class="deco-sticker deco-money-face" src="images/page3/sticker-money-face.png" alt="Cutout photo of a person in sunglasses and a black hoodie covering their mouth with a stack of cash" />
-      <img class="deco-sticker deco-four-peace" src="images/page3/sticker-four-peace.png" alt="Cutout group photo of four friends making peace signs and hand gestures at night" />
-      <img class="deco-sticker deco-five-black" src="images/page3/sticker-five-black.png" alt="Cutout photo of five people in all-black streetwear making rock-on and middle finger gestures" />
-      <img class="deco-sticker deco-fivelines-circle" src="images/page3/sticker-fivelines-circle.png" alt="Circular cropped nighttime portrait of a young man with a buzzcut, overlaid with a white star and the watermark FIVELINES" />
-      <img class="deco-sticker deco-five-bw-group" src="images/page3/sticker-five-bw-group.png" alt="Black and white cutout group photo of five people posing together in dark streetwear" />
-
-      <span class="deco-star deco-star-wall">
-        <img src="images/page3/star-wall-selfie.jpg" alt="Photo of a young man pointing at a wall covered in stickers, cropped into a star shape" />
-      </span>
-      <span class="deco-star deco-star-scarred">
-        <img src="images/page3/star-scarred-guy.jpg" alt="Nighttime selfie of a young man with a scratched face, a surgical mask pulled down, and a cigarette in his mouth, cropped into a star shape" />
-      </span>
     </main>
 
     <!-- 左箭头:回到page2 -->
@@ -152,7 +150,7 @@
             var isSameCell = cell === currentCell;
             stopCurrent();
             if (isSameCell) {
-              return; // 再次点击同一张:当作暂停
+              return;
             }
             var src = cell.getAttribute("data-audio");
             var audio = new Audio(src);
@@ -162,7 +160,6 @@
             currentAudio = audio;
             currentCell = cell;
 
-            // 20秒后自动停止(即使音频文件本身更长)
             var stopTimer = setTimeout(function () {
               if (currentAudio === audio) stopCurrent();
             }, 20000);
