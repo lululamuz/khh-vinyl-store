@@ -262,42 +262,16 @@ body {
   content: "";
   position: fixed;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(10, 10, 10, 0.35) 0%,
-    rgba(10, 10, 10, 0.75) 40%,
-    rgba(10, 10, 10, 0.92) 100%
-  );
+  background: rgba(10, 10, 10, 0.75);
   z-index: 0;
   pointer-events: none;
 }
 
-.skylight,
 .display-room,
 .wall-nav,
 .credits {
   position: relative;
   z-index: 1;
-}
-
-.skylight {
-  position: relative;
-  height: 140px;
-  overflow: hidden;
-}
-
-.skylight-glow {
-  position: absolute;
-  top: -60%;
-  left: 50%;
-  width: 60%;
-  height: 200%;
-  transform: translateX(-50%);
-  background: radial-gradient(
-    ellipse at center,
-    rgba(255, 255, 224, 0.35) 0%,
-    rgba(255, 255, 224, 0) 70%
-  );
 }
 
 .display-room {
@@ -314,7 +288,7 @@ body {
 .room-header h1 {
   font-family: "Abril Fatface", serif;
   font-size: clamp(2.5rem, 6vw, 4.5rem);
-  color: #FFBF00;
+  color: #FF00F7;
   letter-spacing: 0.02em;
 }
 
