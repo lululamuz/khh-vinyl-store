@@ -285,11 +285,27 @@ body {
   margin-bottom: 48px;
 }
 
-.room-header h1 {
+.room-header h1,
+.room-title-spread {
   font-family: "Abril Fatface", serif;
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   color: #EA3377;
   letter-spacing: 0.02em;
+}
+
+/* 标题字母横向撑满整行:D/I/S各自独立、中间PLAY WA保持紧凑、L/L各自独立,
+   flex的space-between只拉开字母之间的间距,字母本身形状/高度完全不变 */
+.room-title-spread {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  letter-spacing: normal;
+}
+
+.room-title-spread span {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .room-intro {
