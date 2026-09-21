@@ -300,8 +300,10 @@ body {
 h1.room-title-spread {
   font-family: "Anton", "Abril Fatface", serif;
   font-weight: 400;
-  display: inline-flex;
+  display: flex;
+  justify-content: space-between;
   align-items: baseline;
+  width: 100%;
 }
 
 .room-title-spread span {
