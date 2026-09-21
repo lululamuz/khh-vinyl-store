@@ -293,19 +293,30 @@ body {
   letter-spacing: 0.02em;
 }
 
-/* 标题字母横向撑满整行:D/I/S各自独立、中间PLAY WA保持紧凑、L/L各自独立,
-   flex的space-between只拉开字母之间的间距,字母本身形状/高度完全不变 */
-.room-title-spread {
-  display: flex;
-  justify-content: space-between;
+/* 标题:大部分字母正常显示,选中的几个字母(I、L、L)用scaleX横向拉伸变形,
+   营造现代艺术字体那种"letters被压扁拉宽"的效果。transform不影响布局占位,
+   所以被拉伸的字母会横向撑出去盖住旁边空间,而不会把其他字母推开 */
+.room-title-spread,
+h1.room-title-spread {
+  font-family: "Anton", "Abril Fatface", serif;
+  font-weight: 400;
+  display: inline-flex;
   align-items: baseline;
-  width: 100%;
-  letter-spacing: normal;
 }
 
 .room-title-spread span {
   display: inline-block;
-  white-space: nowrap;
+}
+
+.room-title-spread .word-gap {
+  width: 0.35em;
+}
+
+.room-title-spread .stretch-letter {
+  transform: scaleX(3.2);
+  transform-origin: center;
+  position: relative;
+  z-index: 1;
 }
 
 .room-intro {
