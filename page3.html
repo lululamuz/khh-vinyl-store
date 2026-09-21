@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Player — Korean Hip Hop Collage</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page3-body">
+    <main class="ipod-stage">
+      <h1 class="ipod-title">THE PLAYER</h1>
+      <p class="ipod-instructions">
+        tap a cover on the screen to hear a 20 second clip.
+      </p>
+
+      <!-- MP3特写照片:主视觉,只露出半个屏幕和半个操控轮 -->
+      <figure class="ipod-hero">
+        <img
+          class="main-photo"
+          src="images/page3/ipod-closeup.jpg"
+          alt="Extreme close-up of a classic click-wheel MP3 player, showing the lower half of its screen and the upper half of its circular control wheel with the MENU label"
+        />
+
+        <!-- 屏幕区域:2x2 CSS Grid,四张专辑封面可点击播放对应20秒音频 -->
+        <div class="screen-grid">
+          <button
+            class="screen-cell"
+            type="button"
+            data-audio="images/page3/audio/track-01-lov3.mp3"
+            aria-label="Play a 20 second clip of LOV3"
+          >
+            <img
+              src="images/page3/screens/screen-01-lov3.png"
+              alt="Blurry black and white album cover for LOV3 with a Parental Advisory Explicit Content label"
+            />
+            <span class="play-icon" aria-hidden="true">&#9658;</span>
+          </button>
+
+          <button
+            class="screen-cell"
+            type="button"
+            data-audio="images/page3/audio/track-02-burningslow.mp3"
+            aria-label="Play a 20 second clip of Burning slow remix"
+          >
+            <img
+              src="images/page3/screens/screen-02-burningslow.png"
+              alt="Grainy abstract black and white album cover for the Burning slow remix with a Parental Advisory Explicit Content label"
+            />
+            <span class="play-icon" aria-hidden="true">&#9658;</span>
+          </button>
+
+          <button
+            class="screen-cell"
+            type="button"
+            data-audio="images/page3/audio/track-03-publicenemy.mp3"
+            aria-label="Play a 20 second clip of Public Enemy 4SHOMIX"
+          >
+            <img
+              src="images/page3/screens/screen-03-publicenemy.png"
+              alt="Comic-style illustration of the number two with five figures wearing LNGSHOT caps, album cover for Public Enemy 4SHOMIX"
+            />
+            <span class="play-icon" aria-hidden="true">&#9658;</span>
+          </button>
+
+          <button
+            class="screen-cell"
+            type="button"
+            data-audio="images/page3/audio/track-04-kc3.mp3"
+            aria-label="Play a 20 second clip of KC3"
+          >
+            <img
+              src="images/page3/screens/screen-04-kc3.png"
+              alt="Bone and skull motif forming the letters KC in chrome metallic style on a black background, album cover for KC3"
+            />
+            <span class="play-icon" aria-hidden="true">&#9658;</span>
+          </button>
+        </div>
+
+        <!-- 门把手同款思路:贴纸叠加在机身周围,但这次贴纸在stage层,不在hero内部,方便铺得更开 -->
+      </figure>
+
+      <!-- 贴纸:围绕在MP3播放器四周,自由拼贴风格,和page1呼应但独立摆放 -->
+      <img class="deco-sticker deco-two-rappers" src="images/page3/sticker-two-rappers.png" alt="Cutout photo of two Korean hip hop artists posing, one in a blue bucket hat throwing a peace sign, the other with red hair wearing sunglasses" />
+      <img class="deco-sticker deco-mirror-selfie" src="images/page3/sticker-mirror-selfie.png" alt="Cutout mirror selfie of a young man in a red pinstriped jersey and scarf holding up a phone to take the photo" />
+      <img class="deco-sticker deco-heart" src="images/page3/sticker-heart.png" alt="Cutout photo of two people close together, framed inside a hand-drawn red heart outline" />
+      <img class="deco-sticker deco-money-face" src="images/page3/sticker-money-face.png" alt="Cutout photo of a person in sunglasses and a black hoodie covering their mouth with a stack of cash" />
+      <img class="deco-sticker deco-four-peace" src="images/page3/sticker-four-peace.png" alt="Cutout group photo of four friends making peace signs and hand gestures at night" />
+      <img class="deco-sticker deco-five-black" src="images/page3/sticker-five-black.png" alt="Cutout photo of five people in all-black streetwear making rock-on and middle finger gestures" />
+      <img class="deco-sticker deco-fivelines-circle" src="images/page3/sticker-fivelines-circle.png" alt="Circular cropped nighttime portrait of a young man with a buzzcut, overlaid with a white star and the watermark FIVELINES" />
+      <img class="deco-sticker deco-five-bw-group" src="images/page3/sticker-five-bw-group.png" alt="Black and white cutout group photo of five people posing together in dark streetwear" />
+
+      <span class="deco-star deco-star-wall">
+        <img src="images/page3/star-wall-selfie.jpg" alt="Photo of a young man pointing at a wall covered in stickers, cropped into a star shape" />
+      </span>
+      <span class="deco-star deco-star-scarred">
+        <img src="images/page3/star-scarred-guy.jpg" alt="Nighttime selfie of a young man with a scratched face, a surgical mask pulled down, and a cigarette in his mouth, cropped into a star shape" />
+      </span>
+    </main>
+
+    <!-- 左箭头:回到page2 -->
+    <nav class="wall-nav" aria-label="Page navigation">
+      <a class="wall-arrow wall-arrow-left" href="page2.html" aria-label="Back to the display wall">&#8592;</a>
+    </nav>
+
+    <footer class="credits">
+      <h2>Image &amp; Audio Credits</h2>
+      <ul>
+        <li>
+          MP3 player photo:
+          <a href="https://www.pinterest.com/pin/674484481720275668/" target="_blank" rel="noopener">Pinterest</a>
+        </li>
+        <li>
+          Screen album covers (LOV3, Burning slow, Public Enemy 4SHOMIX, KC3): original artwork by the respective artists, sourced from Spotify.
+        </li>
+        <li>
+          Audio clips: recorded by the site's creator for this project.
+        </li>
+        <li>
+          Decorative sticker photos: personal collection, edited by the site's creator.
+        </li>
+      </ul>
+    </footer>
+
+    <script>
+      (function () {
+        var currentAudio = null;
+        var currentCell = null;
+
+        function stopCurrent() {
+          if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+          }
+          if (currentCell) {
+            currentCell.classList.remove("playing");
+            currentCell.querySelector(".play-icon").innerHTML = "&#9658;";
+          }
+          currentAudio = null;
+          currentCell = null;
+        }
+
+        document.querySelectorAll(".screen-cell").forEach(function (cell) {
+          cell.addEventListener("click", function () {
+            var isSameCell = cell === currentCell;
+            stopCurrent();
+            if (isSameCell) {
+              return; // 再次点击同一张:当作暂停
+            }
+            var src = cell.getAttribute("data-audio");
+            var audio = new Audio(src);
+            audio.play();
+            cell.classList.add("playing");
+            cell.querySelector(".play-icon").innerHTML = "&#10074;&#10074;";
+            currentAudio = audio;
+            currentCell = cell;
+
+            // 20秒后自动停止(即使音频文件本身更长)
+            var stopTimer = setTimeout(function () {
+              if (currentAudio === audio) stopCurrent();
+            }, 20000);
+
+            audio.addEventListener("ended", function () {
+              clearTimeout(stopTimer);
+              if (currentAudio === audio) stopCurrent();
+            });
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
