@@ -627,7 +627,7 @@ body {
 }
 
 .deco-fivelines-circle {
-  top: 63%;
+  top: 49%;
   right: 30%;
   width: 11%;
   aspect-ratio: 1;
@@ -678,15 +678,16 @@ body {
 }
 
 .deco-star-wall {
-  top: 37%;
-  left: 34%;
+  top: 6%;
+  right: 8%;
+  width: 16%;
   animation: sway-i 4.3s ease-in-out infinite;
 }
 
 .deco-star-scarred {
   top: 6%;
-  left: 4%;
-  width: 14%;
+  left: 8%;
+  width: 18%;
   animation: sway-j 3.9s ease-in-out infinite;
 }
 
