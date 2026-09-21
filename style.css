@@ -56,7 +56,7 @@ body {
   font-size: clamp(3rem, 11vw, 8rem);
   line-height: 0.8;
   letter-spacing: -0.01em;
-  color: #faff00;
+  color: #FFBF00;
   transform: scaleY(1.75);
   text-shadow: 0 0 40px rgba(0, 0, 0, 0.55);
   pointer-events: none;
@@ -195,7 +195,7 @@ body {
 
 .enter-nav a:hover,
 .enter-nav a:focus {
-  color: #ffde59;
+  color: #FFBF00;
   background: rgba(0, 0, 0, 0.85);
 }
 
@@ -235,7 +235,7 @@ body {
 
 .credits a:hover,
 .credits a:focus {
-  color: #ffde59;
+  color: #FFBF00;
 }
 
 /* ===== 响应式:小屏幕上让贴纸稍微缩小,避免过度重叠 ===== */
@@ -272,7 +272,33 @@ body {
    page3(之后)的布局都不一样,体现"每页不同网格结构"
    ============================================ */
 .page2-body {
-  background: #0d0d0d;
+  background: #0d0d0d url("images/page2/room-bg.jpg") no-repeat center top;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* 半透明暗色叠加层,确保背景照片上的文字和卡片依然清晰可读 */
+.page2-body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 10, 0.35) 0%,
+    rgba(10, 10, 10, 0.75) 40%,
+    rgba(10, 10, 10, 0.92) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.skylight,
+.display-room,
+.wall-nav,
+.credits {
+  position: relative;
+  z-index: 1;
 }
 
 /* 天窗:纯装饰,模拟店内抬头看到的天花板光线 */
@@ -280,13 +306,12 @@ body {
   position: relative;
   height: 140px;
   background: repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.06) 0px,
-      rgba(255, 255, 255, 0.06) 2px,
-      transparent 2px,
-      transparent 90px
-    ),
-    linear-gradient(180deg, #2a2a2a 0%, #0d0d0d 100%);
+    90deg,
+    rgba(255, 255, 255, 0.1) 0px,
+    rgba(255, 255, 255, 0.1) 2px,
+    transparent 2px,
+    transparent 90px
+  );
   overflow: hidden;
 }
 
@@ -318,7 +343,7 @@ body {
 .room-header h1 {
   font-family: "Abril Fatface", serif;
   font-size: clamp(2.5rem, 6vw, 4.5rem);
-  color: #faff00;
+  color: #FFBF00;
   letter-spacing: 0.02em;
 }
 
@@ -347,7 +372,7 @@ body {
 }
 
 .flip-card:focus-visible .flip-card-inner {
-  outline: 3px solid #faff00;
+  outline: 3px solid #FFBF00;
   outline-offset: 4px;
 }
 
@@ -383,7 +408,7 @@ body {
 
 .flip-card-back {
   background: #111;
-  border: 2px solid #faff00;
+  border: 2px solid #FFBF00;
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
@@ -395,7 +420,7 @@ body {
 
 .track-title {
   font-family: "Abril Fatface", serif;
-  color: #faff00;
+  color: #FFBF00;
   font-size: 1.1rem;
   margin-bottom: 8px;
   line-height: 1.2;
@@ -426,7 +451,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 1.8rem;
-  color: #faff00;
+  color: #FFBF00;
   text-decoration: none;
   background: rgba(0, 0, 0, 0.55);
   border-radius: 50%;
