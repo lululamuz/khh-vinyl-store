@@ -1,4 +1,3 @@
-/* ===== 全局重置 ===== */
 * {
   margin: 0;
   padding: 0;
@@ -11,22 +10,16 @@ body {
   color: #222;
 }
 
-/* Page 1 整体用 CSS Grid 分成两行:hero大图区 + tagline文字区。
-   hero内部的贴纸依然用 position:absolute 做自由拼贴,两者不冲突:
-   Grid 负责整页的宏观结构,absolute 负责 hero 内部的贴纸细节摆放。 */
 .storefront {
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr;
 }
 
-/* ============================================
-   HERO: 门的照片,横向满宽,所有贴纸都叠加在这张照片上
-   ============================================ */
 .hero {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 2; /* 门店照片原始比例 735x490,完整显示不裁切变形 */
+  aspect-ratio: 3 / 2; 
   max-height: 92vh;
   overflow: hidden;
 }
@@ -43,7 +36,6 @@ body {
   display: block;
 }
 
-/* ===== 标题招牌 ===== */
 .shop-sign {
   position: absolute;
   inset: 0;
@@ -62,7 +54,6 @@ body {
   pointer-events: none;
 }
 
-/* ===== 门把手贴纸:很小尺寸,贴在照片里真实门的位置上,可交互 ===== */
 .handle-overlay {
   position: absolute;
   top: 55%;
@@ -85,7 +76,6 @@ body {
   z-index: 6;
 }
 
-/* ===== 贴纸通用样式:白边+投影,模拟"贴上去"的质感 ===== */
 .sticker {
   position: absolute;
   z-index: 2;
@@ -108,7 +98,6 @@ body {
   transform: scale(1.12) rotate(0deg) !important;
 }
 
-/* 每张贴纸的位置、大小、比例,均对应各自原图的真实宽高比,避免裁切变形 */
 .sticker-hours {
   top: 4%;
   left: 2%;
@@ -173,7 +162,6 @@ body {
   transform: rotate(-5deg);
 }
 
-/* ===== 导航:进入店内 ===== */
 .enter-nav {
   position: absolute;
   bottom: 5%;
@@ -199,7 +187,6 @@ body {
   background: rgba(0, 0, 0, 0.85);
 }
 
-/* ===== 氛围文案 ===== */
 .tagline {
   font-family: "Space Mono", monospace;
   font-weight: 700;
@@ -210,7 +197,6 @@ body {
   background: #1a1a1a;
 }
 
-/* ===== 素材来源 Credits ===== */
 .credits {
   background: #111;
   color: #999;
@@ -238,7 +224,6 @@ body {
   color: #FFBF00;
 }
 
-/* ===== 响应式:小屏幕上让贴纸稍微缩小,避免过度重叠 ===== */
 @media (max-width: 700px) {
   .hero {
     aspect-ratio: 4 / 5;
@@ -266,11 +251,6 @@ body {
   }
 }
 
-/* ============================================
-   PAGE 2: THE DISPLAY WALL
-   3行 x 4列 的 CSS Grid 展示墙,和page1的absolute拼贴、
-   page3(之后)的布局都不一样,体现"每页不同网格结构"
-   ============================================ */
 .page2-body {
   background: #0d0d0d url("images/page2/room-bg.jpg") no-repeat center top;
   background-size: cover;
@@ -278,7 +258,6 @@ body {
   position: relative;
 }
 
-/* 半透明暗色叠加层,确保背景照片上的文字和卡片依然清晰可读 */
 .page2-body::before {
   content: "";
   position: fixed;
@@ -301,7 +280,6 @@ body {
   z-index: 1;
 }
 
-/* 天窗:纯装饰,模拟店内抬头看到的天花板光线 */
 .skylight {
   position: relative;
   height: 140px;
@@ -349,7 +327,6 @@ body {
   line-height: 1.6;
 }
 
-/* 展示墙:3行4列 CSS Grid */
 .wall-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -432,7 +409,6 @@ body {
   line-height: 1.5;
 }
 
-/* 左右箭头导航 */
 .wall-arrow {
   position: fixed;
   top: 50%;
@@ -470,7 +446,6 @@ body {
   margin: 0 auto;
 }
 
-/* ===== 响应式:小屏幕上减少列数 ===== */
 @media (max-width: 900px) {
   .display-room {
     padding: 30px 30px 80px;
@@ -493,13 +468,6 @@ body {
   }
 }
 
-/* ============================================
-   PAGE 3: 2000s
-   MP3特写照片横向满宽(呼应page1的门照片手法),贴纸直接叠加/
-   悬挂在照片边缘上,屏幕区域是独立的2x2 CSS Grid 用来点击播放音频 —
-   三页各自的网格用法完全不同:page1是absolute叠加、page2是规整3x4展示墙网格、
-   page3是"满宽主图 + 边缘悬挂贴纸 + 内嵌小型功能性网格"
-   ============================================ */
 .page3-body {
   background: #101010;
   overflow-x: hidden;
@@ -510,10 +478,9 @@ body {
   padding: 0 0 140px;
 }
 
-/* 标题+副标题:叠加在屏幕和滚轮之间的金属机身空隙里 */
 .ipod-caption {
   position: absolute;
-  top: 38%;
+  top: 42%;
   left: 50%;
   transform: translateX(-50%);
   width: 70%;
@@ -524,19 +491,18 @@ body {
 .ipod-title {
   font-family: "Abril Fatface", serif;
   color: #FFBF00;
-  font-size: clamp(1.3rem, 3.2vw, 2.2rem);
-  margin-bottom: 4px;
+  font-size: clamp(1.9rem, 4.4vw, 3.2rem);
+  margin-bottom: 6px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .ipod-instructions {
   font-family: "Space Mono", monospace;
   color: #eee;
-  font-size: clamp(0.6rem, 1.1vw, 0.8rem);
+  font-size: clamp(0.8rem, 1.5vw, 1.05rem);
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
-/* MP3播放器特写:横向满宽,贴边撑满,不留黑边 */
 .ipod-hero {
   position: relative;
   width: 100%;
@@ -550,8 +516,6 @@ body {
   display: block;
 }
 
-/* 屏幕区域:2x2 CSS Grid,四个正方形小方块,缩小尺寸精确卡在屏幕这条窄带里,
-   不再拉伸变形 */
 .screen-grid {
   position: absolute;
   top: 3%;
@@ -617,8 +581,6 @@ body {
   outline-offset: 2px;
 }
 
-/* 贴纸:放大尺寸,直接压在MP3机身和滚轮上,营造贴满机身的拼贴感,
-   并加上左右轻轻摆动的动画,让静态贴纸有种"风吹动"的生气 */
 .deco-sticker {
   position: absolute;
   z-index: 4;
@@ -687,7 +649,6 @@ body {
   animation: sway-h 4.1s ease-in-out infinite;
 }
 
-/* 五角星形状的两张贴纸 */
 .deco-star {
   position: absolute;
   z-index: 4;
@@ -723,13 +684,12 @@ body {
 }
 
 .deco-star-scarred {
-  top: 83%;
-  left: 50%;
-  width: 11%;
+  top: 6%;
+  left: 4%;
+  width: 14%;
   animation: sway-j 3.9s ease-in-out infinite;
 }
 
-/* 每个贴纸各自的摆动区间,围绕它原本的倾斜角度小幅度左右晃动 */
 @keyframes sway-a {
   0%, 100% { transform: rotate(-11deg); }
   50% { transform: rotate(-5deg); }
@@ -771,7 +731,6 @@ body {
   50% { transform: translateX(-50%) rotate(9deg); }
 }
 
-/* ===== 响应式:小屏幕上贴纸稍微缩小并收进边缘,避免溢出太多 ===== */
 @media (max-width: 700px) {
   .ipod-stage {
     padding: 0 0 100px;
